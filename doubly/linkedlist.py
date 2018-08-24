@@ -7,10 +7,10 @@ class LinkedList:
 
 
 	def getLastNode(self):
-		if not self.first_node.getPrev()=='EOF':
-			return self.first_node.getPrev()
-		else:
-			return self.first_node
+		this_node = self.first_node
+		while( not this_node.getNext()=='EOF' ):
+			this_node = this_node.getNext()
+		return this_node
 
 	def insert(self, value):
 		if not self.first_node=='':
